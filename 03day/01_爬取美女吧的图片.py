@@ -1,3 +1,4 @@
+import os
 import urllib.request as urllib2
 from lxml import etree
 
@@ -105,6 +106,8 @@ class tieba_image_spider(object):
             print(e)
             return
         img_name = url[-10:]
+        if not os.path.isdir("image"):
+            os.mkdir("image")
         with open(f"image/{img_name}", "wb") as f:
             f.write(image_data)
 
