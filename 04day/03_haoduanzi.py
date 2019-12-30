@@ -77,11 +77,11 @@ if __name__ == "__main__":
     print("欢迎使用\n本程序作用：爬取好段子网站的段子，并存为json格式的文件。")
     try:
         start = int(input("请输入要爬取的开始页："))
-    except Exception as e:
+    except:
         start = 1
     try:
         end = int(input("请输入要爬取的结束页："))
-    except Exception as e:
+    except:
         end = 1
     spider = DuanziSpider(start, end)
     spider.spider_work()
